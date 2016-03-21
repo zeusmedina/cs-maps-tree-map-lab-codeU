@@ -34,7 +34,7 @@ A binary search tree (BST) is a tree where each node contains a key, and every `
 
 The following diagram shows a tree of integers that has this property.
 
-![alt tag](put URL here)
+![alt tag](https://raw.githubusercontent.com/learn-co-curriculum/cs-maps-tree-map-lab/wip-master/200px-Binary_search_tree.svg.png?token=ABy37TGggS4i8QYQNm7poKLMLCIcyf9Kks5W-YlVwA%3D%3D)
 
 This figure is from the [Wikipedia page on binary search trees](https://en.wikipedia.org/wiki/Binary_search_tree), which you might find useful while you work on this lab.
 

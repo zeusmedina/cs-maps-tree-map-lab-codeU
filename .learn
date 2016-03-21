@@ -1,6 +1,9 @@
 tags:
-  - a tag
+  - Map interface
+  - Binary search tree
+  - Analysis of algorithms
+  - Logarithmic time
 languages:
-  - a language
+  - Java
 resources: 
-  - 0
+  - 3
