@@ -1,6 +1,6 @@
 # cs-maps-tree-map-lab
 
-## Learning goals 
+## Learning goals
 
 1.  Implement the `Map` interface using a binary search tree.
 2.  Analyze the performance of a tree-backed map.
@@ -34,7 +34,7 @@ A binary search tree (BST) is a tree where each node contains a key, and every `
 
 The following diagram shows a tree of integers that has this property.
 
-![alt tag](https://raw.githubusercontent.com/learn-co-curriculum/cs-maps-tree-map-lab/wip-master/200px-Binary_search_tree.svg.png?token=ABy37TGggS4i8QYQNm7poKLMLCIcyf9Kks5W-YlVwA%3D%3D)
+![alt tag](https://curriculum-content.s3.amazonaws.com/javacs/200px-Binary_search_tree.svg.png)
 
 This figure is from the [Wikipedia page on binary search trees](https://en.wikipedia.org/wiki/Binary_search_tree), which you might find useful while you work on this lab.
 
@@ -100,7 +100,7 @@ Here's the definition of `Node`, which is defined inside `MyTreeMap`:
 		public V value;
 		public Node left = null;
 		public Node right = null;
-		
+
 		public Node(K key, V value) {
 			this.key = key;
 			this.value = value;
@@ -137,7 +137,7 @@ When you check out the repository for this lab, you should find a file structure
 In the subdirectory `javacs-lab09/src/com/flatironschool/javacs` you'll find these source files:
 
 *  `MyTreeMap.java` contains the code from the previous section with outlines for the missing methods.
-    
+
 *  `MyTreeMapTest.java` contains the unit tests for `MyTreeMap`.
 
 Also, in `javacs-lab09`, you'll find the Ant build file `build.xml`.
@@ -151,11 +151,11 @@ Also, in `javacs-lab09`, you'll find the Ant build file `build.xml`.
 		if (target == null) {
 	            throw new NullPointerException();
 		}
-		
+
 		@SuppressWarnings("unchecked")
 		Comparable<? super K> k = (Comparable<? super K>) target;
         	int cmp = k.compareTo(p.key);
-        
+
         	// FILL THIS IN
 
         	return null;
@@ -171,7 +171,7 @@ Fortunately, dealing with Java's type system is not the point of this exercise. 
 
 Note that your solution should only search one path through the tree, so it should take time proportional to the height of the tree.  You should not search the whole tree!
 
-*  Your next task is to fill in `containsValue`.  To get you started, we've provides a helper method, `equals`, that compares `target` and a given key.  Note that the values in the tree (as opposed to the keys) are not necessarily comparable, so we can't use `compareTo`; we have to use invoke `equals` on `target`.
+*  Your next task is to fill in `containsValue`.  To get you started, we've provided a helper method, `equals`, that compares `target` and a given key.  Note that the values in the tree (as opposed to the keys) are not necessarily comparable, so we can't use `compareTo`; we have to invoke `equals` on `target`.
 
 Unlike your previous solution for `findNode`, your solution for `containsValue` *does* have to search the whole tree, so its runtime will proportional to the number of keys, `n`, not the height of the tree, `h`.
 
@@ -199,7 +199,7 @@ If you try to put `null` as a key, `put` throws an exception.
 
 If the tree is empty, `put` creates a new node and initializes the instance variable `root`.
 
-Otherwise, it calls `putHelper`, which is a private method we defined; it is not part of the `Map` interface. 
+Otherwise, it calls `putHelper`, which is a private method we defined; it is not part of the `Map` interface.
 
 Fill in `putHelper` so it searches the tree and:
 
@@ -232,5 +232,3 @@ When you are done, all tests should pass.  In the next README, we'll go over our
 [Type wildcards](http://docs.oracle.com/javase/tutorial/extra/generics/morefun.html): Java tutorial.
 
 [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal): Wikipedia.
-
-
