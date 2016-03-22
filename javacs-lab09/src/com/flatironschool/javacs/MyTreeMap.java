@@ -53,7 +53,7 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 
 	@Override
 	public boolean containsKey(Object target) {
-		return findNode(root, target) != null;
+		return findNode(target) != null;
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 	 * 
 	 * @param target
 	 */
-	private Node findNode(Node node, Object target) {
+	private Node findNode(Object target) {
 		// some implementations can handle null as a key, but not this one
 		if (target == null) {
             throw new NullPointerException();
@@ -72,15 +72,15 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 		Comparable<? super K> k = (Comparable<? super K>) target;
 		
 		// the actual search
-        Node p = root;
-        while (p != null) {
-            int cmp = k.compareTo(p.key);
+        Node node = root;
+        while (node != null) {
+            int cmp = k.compareTo(node.key);
             if (cmp < 0)
-                p = p.left;
+                node = node.left;
             else if (cmp > 0)
-                p = p.right;
+                node = node.right;
             else
-                return p;
+                return node;
         }
         return null;
 	}
@@ -127,7 +127,7 @@ public class MyTreeMap<K, V> implements Map<K, V> {
 
 	@Override
 	public V get(Object key) {
-		Node node = findNode(root, key);
+		Node node = findNode(key);
 		if (node == null) {
 			return null;
 		}
