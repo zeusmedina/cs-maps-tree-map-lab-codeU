@@ -147,7 +147,7 @@ Also, in `javacs-lab09`, you'll find the Ant build file `build.xml`.
 *  We've provided outlines for `get` and `containsKey`.  Both of them use `findNode`, which is a private method we defined; it is not part of the `Map` interface.  Here's how it starts:
 
 ```java
-	private Node findNode(Node node, Object target) {
+	private Node findNode(Object target) {
 		if (target == null) {
 	            throw new NullPointerException();
 		}
@@ -162,9 +162,7 @@ Also, in `javacs-lab09`, you'll find the Ant build file `build.xml`.
 	}
 ```
 
-The parameter `node` is the `Node` where we should start looking, which is initially the root of the tree.  `target` is the key we're looking for. 
-
-If `target` is `null`, `findNode` throws an exception.  Some implementations of `Map` can handle `null` as a key, but in a binary search tree, we need to be able to compare keys, so dealing with `null` is problematic.  To keep things simple, we decided that our implementation should not allow `null` as a key.
+The parameter `target` is the key we're looking for.  If `target` is `null`, `findNode` throws an exception.  Some implementations of `Map` can handle `null` as a key, but in a binary search tree, we need to be able to compare keys, so dealing with `null` is problematic.  To keep things simple, we decided that our implementation should not allow `null` as a key.
 
 The next lines show how we can compare `target` to a key in the tree.  From the signature of `get` and `containsKey`, the compiler considers `target` to be an `Object`.  But we need to be able to compare keys, so we typecast `target` to `Comparable<? super K>`, which means that it is comparable to an instance of type `K`, or any superclass of `K`.  
 If you are not familiar with this use of "type wildcards", [you can read more here](http://docs.oracle.com/javase/tutorial/extra/generics/morefun.html).
