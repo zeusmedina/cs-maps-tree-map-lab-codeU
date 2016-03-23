@@ -14,9 +14,9 @@ Because of this performance, `HashMap` is widely used, but it is not the only im
 
 1.  Hashing can be slow, so even though `HashMap` operations are constant time, the "constant" might be big.
 
-2.  The keys in a hash table are not stored in any particular order; in fact, the order might change when the table grows and the keys are rehashed.
+2.  The keys in a hash table are not stored in any particular order; in fact, the order might change when the table grows and the keys are rehashed.  For some applications, it is necessary, or at least useful, to keep the keys in order.
 
-For some applications, it is necessary, or at least useful, to keep the keys in order.  It turns out to be hard to do both of those things at the same time, but Java provides an implementation called `TreeMap` that comes close:
+It turns out to be hard to solve both of these problems at the same time, but Java provides an implementation called `TreeMap` that comes close:
 
 1.  The order of growth is not quite as good.  Instead of constant time, a `TreeMap` takes time proportional to `log n`.
 
