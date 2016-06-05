@@ -22,7 +22,7 @@ It turns out to be hard to solve both of these problems at the same time, but Ja
 
 2.  Inside the `TreeMap`, the keys are not stored in order; they are stored in a **binary search tree**, which makes it possible to traverse the keys, in order, in linear time.
 
-In this lab, we'll explain how binary search trees work and then you will use one to implement a `Map`.  Along the way, we'll analyze the performance of the core map methods when imlemented using a tree.
+In this lab, we'll explain how binary search trees work and then you will use one to implement a `Map`.  Along the way, we'll analyze the performance of the core map methods when implemented using a tree.
 
 
 ## Binary search tree
@@ -230,3 +230,5 @@ When you are done, all tests should pass.  In the next README, we'll go over our
 [Type wildcards](http://docs.oracle.com/javase/tutorial/extra/generics/morefun.html): Java tutorial.
 
 [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal): Wikipedia.
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/cs-maps-tree-map-lab'>Maps: Tree Map Lab</a> on Learn.co and start learning to code for free.</p>
